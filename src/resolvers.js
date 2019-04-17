@@ -31,6 +31,13 @@ const resolvers = {
         link.description = args.description;
       }
       return link;
+    },
+    deleteLink: (parent, args) => {
+      let links = dummyLinks.filter(link => {
+        return link.id !== args.id;
+      });
+      dummyLinks = links;
+      return args.id;
     }
   }
 };
