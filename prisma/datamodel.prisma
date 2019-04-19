@@ -1,13 +1,13 @@
 type Link {
-  id: ID! @unique
-  createdAt: DateTime!
+  id: ID! @unique @id
+  createdAt: DateTime! @createdAt
   description: String!
   url: String! @unique
   postedBy: User
 }
 
 type User {
-  id: ID! @unique
+  id: ID! @unique @id
   name: String!
   email: String! @unique
   password: String!
