@@ -1,9 +1,10 @@
 type Link {
   id: ID! @unique @id
-  createdAt: DateTime! @createdAt
   description: String!
   url: String! @unique
   postedBy: User
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
 
 type User {
@@ -12,4 +13,6 @@ type User {
   email: String! @unique
   password: String!
   links: [Link!]!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
